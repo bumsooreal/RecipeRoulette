@@ -4,9 +4,9 @@ import './index.css';
 //import App from './App'; boiler plate code, note needed 
 import reportWebVitals from './reportWebVitals';
 
-import Results from "/routes/Result"; //modified from HW8, may need to restructure based on names of folders
-import FoodProfile from "/routes/FoodProfile";
-import App from "/routes/App";
+import Results from "./Routes/Results"; //modified from HW8, may need to restructure based on names of folders
+import FoodProfile from "./Routes/FoodProfile";
+import App from "./Routes/App";
 
 import {
   createBrowserRouter,
