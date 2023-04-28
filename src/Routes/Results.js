@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 	props should return list of food
 */
 function Results(props) {
+
+
+
 	return (
 		<div className="Results">
 			here are ur results

@@ -1,6 +1,7 @@
 import "./Dropdown.css";
 import { useEffect, useRef, useState } from 'react';
 
+
 const Icon = () => {
   return (
     <svg height="20" width="20" viewBox="0 0 20 20">
@@ -9,11 +10,15 @@ const Icon = () => {
   );
 };
 
-const Dropdown = ({ placeHolder, options }) => {
+const Dropdown = ({ placeHolder, options, onChange, name}) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+  
   const inputRef = useRef();
   const getDisplay = () => {
-    return placeHolder;
+    if (selectedValue) {
+      return selectedValue.label;
+    }
   };
   useEffect(() => {
     const handler = (e) => {
@@ -31,12 +36,11 @@ const Dropdown = ({ placeHolder, options }) => {
     setShowMenu(!showMenu);
   };
 
-//   const onItemClick = (option) => {
-// 	let newValue;
-// 	if (isMulti) {
-		
-// 	}
-//  };
+  const onItemClick = (option) => {
+    setSelectedValue(option);
+    onChange(name, option.value);
+  };
+
 
   return (
     <div className="dropdown-container">
@@ -50,7 +54,7 @@ const Dropdown = ({ placeHolder, options }) => {
       </div>
       {showMenu && (<div className="dropdown-menu">
         {options.map((option) => (
-            <div key={option.value} className="dropdown-item">
+            <div key={option.value} className="dropdown-item" onClick={() => onItemClick(option)}>
                 {option.label}
             </div>
         ))}

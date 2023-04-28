@@ -3,12 +3,18 @@ import React, { useState, useEffect } from 'react';
 function Data() {
   const [data, setData] = useState(null);
   let bareURL = "https://api.edamam.com/api/recipes/v2?type=public&app_id=568643a5&app_key=3d4a367835cf13d3a4c15f1d9c02ae80&random";
+  let time = document.getElementById("Time");
+  let formattedUrl = //add the user input options into the bareURL
+
   useEffect(() => {
-    fetch() //add filters for querying
+    fetch(formattedURL) //add filters for querying
       .then(response => response.json())
       .then(json => setData(json))
       .catch(error => console.error(error));
-      //let formattedUrl = `${weatherUrl}lat=${lat}&lon=${lon}&appid=${apiKey}`  format for concatenating 
+
+
+      //example formattedURL: let formattedUrl = `${weatherUrl}lat=${lat}&lon=${lon}&appid=${apiKey}`  format for concatenating 
+
   }, []);
 
   return (
