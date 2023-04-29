@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    color:aliceblue;
+}
+
+
+.OptionContainer{
+    display: flex;
+    /* justify-content: center;
+    justify-items: center;
+    min-height: 400px;
+    background-color: aquamarine; */
+    flex-direction: row;
+    
+  }
+
+
+
+.Option {
+    color: aliceblue;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(91, 30, 30);
+    border: 1px solid rgb(56, 80, 151);
+    padding: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Image{
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+ 
