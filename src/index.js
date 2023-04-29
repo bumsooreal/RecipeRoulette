@@ -29,11 +29,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-async function apiCall(url) {
-  let response = await fetch(url)
-  let data = await response.json()
-  return data
-}
+
 
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />

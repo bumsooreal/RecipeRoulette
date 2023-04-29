@@ -37,6 +37,7 @@ const Dropdown = ({ placeHolder, options, onChange, name}) => {
   };
 
   const onItemClick = (option) => {
+    setShowMenu(false);
     setSelectedValue(option);
     onChange(name, option.value);
   };

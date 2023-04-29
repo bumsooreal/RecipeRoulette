@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Dropdown from '../Dropdown'
 
 function App() {
-  const cuisine_Type = [
+  const cuisineType = [
     { value: "asian", label: "Asian" },
     { value: "british", label: "British" },
     { value: "american", label: "American" },
@@ -26,7 +26,7 @@ function App() {
   ];
 
 
-  const meal_Type = [
+  const mealType = [
     { value: "breakfast", label: "Breakfast" },
     { value: "lunch", label: "Lunch" },
     { value: "dinner", label: "Dinner" },
@@ -55,9 +55,15 @@ function App() {
 
   function setProperty(name, value) {
     properties[name] = value;
-    console.log(properties);
   }
 
+
+  // const [timeValue, setTimeValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setProperty("time", event.target.value);
+    // setTimeValue(event.target.value);
+  };
 
 
   return (
@@ -70,12 +76,12 @@ function App() {
         <h4>Cuisine Type</h4>
   
 
-        <Dropdown placeholder="Select..." options={cuisine_Type} onChange={setProperty} name="cuisine_Type"/>
+        <Dropdown placeholder="Select..." options={cuisineType} onChange={setProperty} name="cuisineType"/>
       </div>
 
       <div>
         <h4>Meal Type</h4>
-        <Dropdown placeholder="Select..." options={meal_Type} onChange={setProperty} name="meal_Type"/>
+        <Dropdown placeholder="Select..." options={mealType} onChange={setProperty} name="mealType"/>
       </div>
     
       <div>
@@ -83,17 +89,14 @@ function App() {
         <Dropdown placeholder="Select..." options={health} onChange={setProperty} name="health"/>
       </div>
       <div>
-        <h4>Time</h4>
-        <input type="text" id="Time"/> 
+        <h4>Time (min)</h4>
+        <input type="number" id="Time" onChange={handleInputChange}/> 
         
       </div>
 
 
       <div>
-        <Link to={{pathname:"/results", 
-                   state: {cuisine: properties.cuisine_Type, meal: properties.meal_Type, health: properties.health}
-      
-        }}>
+        <Link to="/results" state={properties}>
           <button>Generate</button>
         </Link>
       </div>
