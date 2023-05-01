@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
+import openAI from '../OpenAI.js'
+
 
 function FoodProfile() {
     const location = useLocation();
 	const hit= location.state;
     const itemData = hit['recipe'];
+    const itemName = itemData['label'].replace("Recipe", '').replace('!',"").replace("recipes",'');
+    const [openAIData, setData] = useState(null);
+
     // Dish name
     // Ending time
     // Picture
@@ -13,14 +18,20 @@ function FoodProfile() {
     // Nutrition
         // Calories    
         // 
-
-
-        
-    console.log(itemData);
+    useEffect(() => {
+        const fetchAndSet = async () => {
+            const response = await openAI(itemName);
+            console.log(response);
+            console.log(JSON.parse(response))
+            setData(response);
+        }
+        fetchAndSet();
+    }, [openAIData]);
+    
     return (
         <main>
             <div className='Dish Name'>  
-                { itemData['label'].replace("Recipe", '').replace('!',"").replace("recipes",'')}
+                itemName
             </div>
         
             <div className="Ending Time">
@@ -51,3 +62,4 @@ function FoodProfile() {
 }
 
 export default FoodProfile;
+
