@@ -44,32 +44,24 @@ function Results(props) {
 		<div className="Results">
 			here are ur results
 		
-		<div className='OptionContainer'>	
-		{topHits ?
-			topHits.map((hit) => {
-				return <div className="Option"> 
-							<img className='Image' src={hit['recipe']['image']} alt= 'Recipe Image' />
+			<div className='OptionContainer'>	
+			{topHits ?
+				topHits.map((hit) => {
+					return <Link  to="/foodprofile"  state={hit} >
+							<div className="Option" > 
+								<img className='Image' src={hit['recipe']['image']} alt= 'Recipe Image' />
+								
+								<div className='Caption'> { hit['recipe']['label'].replace("Recipe", '').replace('!',"").replace("recipes",'')} </div>
 							
-							<div className='Caption'> { hit['recipe']['label'].replace("Recipe", '').replace('!',"").replace("recpies",'')} </div>
-						
-						</div>
-			})
-			:
-			<div>Loading...</div>
-		}
+							</div>
+							</Link>
+				})			
+				:
+				<div>Loading...</div>
+			}
 
-		</div>
+			</div>
 
-		<div>
-                <Link to="/foodprofile">
-                    <button>
-						<div>
-							TO FOOD PROFILE
-						</div>
-
-					</button>
-                </Link>
-            </div>
 		</div>
 
 		</body>
