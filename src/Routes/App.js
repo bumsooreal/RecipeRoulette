@@ -74,7 +74,6 @@ function App() {
       <div class="Filters">
         <div>
           <h4>Cuisine Type</h4>
-    
 
           <Dropdown placeholder="Select..." options={cuisineType} onChange={setProperty} name="cuisineType"/>
         </div>

@@ -54,13 +54,14 @@ function Results(props) {
         </main>
 		:
 		<div>
-			<header className="App-header">
-					Recipe Roulette
-			</header>
+			<Link to="/">
+                <header className="App-header">
+				    Recipe Roulette
+		        </header>
+            </Link>
 			<body>
 				<div className="Results">
 					<h1>here are ur results</h1>
-					<br></br>
 					<h4>enjoy:D</h4>
 				
 					<div className='OptionContainer'>	

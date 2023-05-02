@@ -18,23 +18,25 @@ body{
     display: flex;
     justify-content: center;
     justify-items: center;
+    gap: 20px;
     min-height: 30vh;
     flex-direction: row;
     align-items: center;
-    padding-top: 100px;
+    padding-bottom: 100px;
+    margin: 100px;
 
 }
 
 .Option {
-    color: rgb(6, 193, 104);
+    color:rgb(219, 172, 52);
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: rgb(33, 45, 54);
-    border: 1px solid rgb(6, 193, 104);
+    border: 1px solid rgb(219, 172, 52);
     padding: 10px;
     margin-right: 10px;
 }
@@ -44,18 +46,22 @@ body{
     height: auto;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+a {
+    color:rgb(33, 45, 54);
 }
 
 h1 {
     text-align: center;
     padding-top: 50px;
-    color:rgb(163, 159, 64);
+    color:rgb(219, 172, 52);
 }
 
 h4 {
     text-align: center;
-    margin:auto;
-    color:rgb(163, 159, 64);
+    color:rgb(219, 172, 52);
 }
 
  

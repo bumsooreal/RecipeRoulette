@@ -52,51 +52,57 @@ function FoodProfile() {
             </div>
         </main>
         :
-
-        
         <main>
-            <header className="App-header">
-				Recipe Roulette
-		    </header>
-        <div class="Profile">
-            <div className='DishName'>  
-                <h1>{itemName}</h1>
-            </div>
-        
-            <div className='Picture'>
-                <img className='Image' src={itemData['image']} alt= 'Recipe Image' />
-            </div>
+            <Link to="/">
+                <header className="App-header">
+				    Recipe Roulette
+		        </header>
+            </Link>
             
-            <div className="EndingTime">
-                {"Estimated time: " + (itemData['totalTime'] > 0 ? itemData['totalTime'] + " minute(s)" : "less than a minute")}
+
+            <div class="Profile">
+
+            <div class="introduction">
+                <div class="columns">
+                    <div className='DishName'>  
+                        <h2>{itemName}</h2>
+                    </div>
+                
+                    <div className='Picture'>
+                        <img className='Image' src={itemData['image']} alt= 'Recipe Image' />
+                    </div>
+                </div>
+                <div className="EndingTime">
+                    {"Estimated time: " + (itemData['totalTime'] > 0 ? itemData['totalTime'] + " minute(s)" : "less than a minute")}
+                </div>
             </div>
 
-            <div className="Ingredients">
-                <h2>Ingredients</h2>
-                {openAIData["Ingredients"].map((ingredient, i) => {
-                    return <div className="Ingredient Line" key={i}>{ingredient}</div>
+            <div class="description">
+                <div className="Ingredients">
+                    <h2>Ingredients</h2>
+                    {openAIData["Ingredients"].map((ingredient, i) => {
+                        return <div className="IngredientLine" key={i}>{ingredient}</div>
+                    })}
+                </div>
+            
+                {/* <div className="Steps">
+                    <div className="Recipe">{openAIData["Recipe"]}</div>
+                </div> */}
+
+                <div className='steps-container'>
+                    <h2>Steps</h2>
+                {openAIData["Recipe"].replace(/[0-9]./g, '').split(". ").map((step) => {
+                    return <div className='StepLine'> {step} </div>
                 })}
-            </div>
-        
-            {/* <div className="Steps">
-                <div className="Recipe">{openAIData["Recipe"]}</div>
-            </div> */}
-
-            <div className='steps-container'>
-               {openAIData["Recipe"].replace(/[0-9]./g, '').split(". ").map((step) => {
-                return <div className='Steps'> {step} </div>
-               })}
-            </div>
-
-            
-
-            
-            
-            <div className="Nutrition">
-                {openAIData["Nutrition"].map((nutrition) => {
-                    return <div className="Nutrition Line">{nutrition}</div>
-                })}
-            </div>					
+                </div>
+                
+                <div className="Nutrition">
+                    <h2>Nutrition</h2>
+                    {openAIData["Nutrition"].map((nutrition) => {
+                        return <div className="NutritionLine">{nutrition}</div>
+                    })}
+                </div>	
+            </div>				
         </div>
         </main>
     )

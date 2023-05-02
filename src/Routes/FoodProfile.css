@@ -33,24 +33,43 @@
   padding-right: 100px;
 }
 
-.Picture {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
+
+.introduction {
+  margin: 50px;
+  padding: 20px;
+  border: 4px solid rgb(255, 255, 255);
+  color: rgb(219, 172, 52);
 }
 
+.columns {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 .DishName {
   align-items: center;
-  
+  font-size: xx-large;
+  width: 450px;
+}
+.Picture {
+  background-color: aliceblue;
+  width: 310px;
+  height: 310px;
 }
 
 .EndingTime {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: right;
+  padding-right: 120px;
+  padding-top: 20px;
+}
+
+.description {
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(219, 172, 52);
+  margin: 50px;
 }
 
 .Ingredients {
@@ -58,19 +77,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: left;
+  padding: 50px;
+  padding-bottom: 0px;
 }
 
-.Steps {
+.IngredientLine {
+  padding: 10px;
+}
+
+.StepLine {
+  padding-top: 10px;
+}
+
+.steps-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+  padding: 50px;
 }
 
 .Nutrition {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
+  padding: 50px;
+  padding-top: 0px;
+}
+
+.NutritionLine {
+  padding-top: 10px;
 }
