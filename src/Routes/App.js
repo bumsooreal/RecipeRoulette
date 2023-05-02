@@ -71,33 +71,33 @@ function App() {
       <header className="App-header">
         Recipe Roulette
       </header>
-      
-      <div>
-        <h4>Cuisine Type</h4>
-  
-
-        <Dropdown placeholder="Select..." options={cuisineType} onChange={setProperty} name="cuisineType"/>
-      </div>
-
-      <div>
-        <h4>Meal Type</h4>
-        <Dropdown placeholder="Select..." options={mealType} onChange={setProperty} name="mealType"/>
-      </div>
+      <div class="Filters">
+        <div>
+          <h4>Cuisine Type</h4>
     
-      <div>
-        <h4>Health</h4>
-        <Dropdown placeholder="Select..." options={health} onChange={setProperty} name="health"/>
-      </div>
-      <div>
-        <h4>Time (min)</h4>
-        <input type="number" id="Time" onChange={handleInputChange}/> 
-        
-      </div>
 
+          <Dropdown placeholder="Select..." options={cuisineType} onChange={setProperty} name="cuisineType"/>
+        </div>
+
+        <div>
+          <h4>Meal Type</h4>
+          <Dropdown placeholder="Select..." options={mealType} onChange={setProperty} name="mealType"/>
+        </div>
+      
+        <div>
+          <h4>Dietary Restrictions</h4>
+          <Dropdown placeholder="Select..." options={health} onChange={setProperty} name="health"/>
+        </div>
+        <div>
+          <h4>Time (min)</h4>
+          <input className='Time'type="number" id="Time" onChange={handleInputChange}/> 
+          
+        </div>
+      </div>
 
       <div>
         <Link to="/results" state={properties}>
-          <button>Generate</button>
+          <button id="generate-btn"> Generate </button>
         </Link>
       </div>
     </div>

@@ -14,20 +14,24 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rgb(25, 36, 45);
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(6, 193, 104);
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.App {
+  background-color: rgb(29, 41, 50);
+  min-height: 100vh;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +39,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Filters {
+  padding-top: 50px;
+  gap: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Time{
+  background-color: rgb(29, 41, 50);
+  color: white;
+}
+
+#generate-btn {
+  background-color: rgb(6, 193, 104);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }

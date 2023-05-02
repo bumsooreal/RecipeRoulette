@@ -42,7 +42,7 @@ function Results(props) {
 		<body>
 
 		<div className="Results">
-			here are ur results
+			<h1>here are ur results</h1>
 		
 			<div className='OptionContainer'>	
 			{topHits ?

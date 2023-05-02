@@ -1,6 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai");
 
-const OPENAI_API_KEY = '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'
+const OPENAI_API_KEY = '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'
 
 const configuration = new Configuration({
   apiKey: OPENAI_API_KEY,
@@ -10,11 +10,24 @@ const openai = new OpenAIApi(configuration);
 async function call(foodName) {
 	const completion = await openai.createCompletion({
 		model: "text-davinci-003",
-		prompt: `Give me the ingredients, recipe, and nutrition results for ${foodName}, but write your response in a valid json format where all the values are strings and each element within lists are divided using ";"`, 
-		max_tokens: 1000
+		prompt: `Give me the ingredients, recipe, and nutrition data for ${foodName}. Separate the list of ingredients from the recipe instructions. The response must be a valid JSON object. The resulting JSON object should be in this format: [{"Ingredients":string[],"Recipe":string, "Nutrition":string[]}] without using any newlines and without any filler messages prior to what was asked for`,  
+		max_tokens: 1500
+	},{
+		headers: {
+			'Content-Type': 'application/json'
+		}
 	});
 	//console.log(completion.data.choices[0]);
-	return completion.data.choices[0].text;
+	let str = completion.data.choices[0].text
+	str = str.replace(`
+`, "")
+	str = str.replace(`\n`,"")
+	str = str.replace(`	`, "")
+	let i = str.indexOf("[")
+	if (i > 0) {
+		str = str.slice(i, str.length)
+	}
+	return str;
 }
 
 export default call

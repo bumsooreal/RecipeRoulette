@@ -1,40 +1,43 @@
 body{
-    background-color: black;
-    color:aliceblue;
+    background-color: rgb(25, 36, 45);
+    color: rgb(6, 193, 104);
 }
-
 
 .OptionContainer{
     display: flex;
-    /* justify-content: center;
-    justify-items: center;
-    min-height: 400px;
-    background-color: aquamarine; */
-    flex-direction: row;
-    
-  }
-
-
-
-.Option {
-    color: aliceblue;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    border-radius: 10px;
-    background-color: rgb(91, 30, 30);
-    border: 1px solid rgb(56, 80, 151);
-    padding: 10px;
-    margin-right: 10px;
     justify-content: center;
+    justify-items: center;
+    min-height: 100vh;
+    flex-direction: row;
     align-items: center;
+    padding-top: 100px;
 
 }
 
-.Image{
+.Option {
+    color: rgb(6, 193, 104);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(33, 45, 54);
+    border: 1px solid rgb(6, 193, 104);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.Image {
     width: auto;
     height: auto;
     justify-content: center;
     align-items: center;
 }
+
+h1 {
+    text-align: center;
+}
+
+
  
