@@ -39,32 +39,37 @@ function Results(props) {
 
 
 	return (
-		<body>
+		<div>
+			<header className="App-header">
+					Recipe Roulette
+			</header>
+			<body>
+				<div className="Results">
+					<h1>here are ur results</h1>
+					<br></br>
+					<h4>enjoy:D</h4>
+				
+					<div className='OptionContainer'>	
+					{topHits ?
+						topHits.map((hit) => {
+							return <Link  to="/foodprofile"  state={hit} >
+									<div className="Option" > 
+										<img className='Image' src={hit['recipe']['image']} alt= 'Recipe Image' />
+										
+										<div className='Caption'> { hit['recipe']['label'].replace("Recipe", '').replace('!',"").replace("recipes",'')} </div>
+									
+									</div>
+									</Link>
+						})			
+						:
+						<div>Loading...</div>
+					}
 
-		<div className="Results">
-			<h1>here are ur results</h1>
-		
-			<div className='OptionContainer'>	
-			{topHits ?
-				topHits.map((hit) => {
-					return <Link  to="/foodprofile"  state={hit} >
-							<div className="Option" > 
-								<img className='Image' src={hit['recipe']['image']} alt= 'Recipe Image' />
-								
-								<div className='Caption'> { hit['recipe']['label'].replace("Recipe", '').replace('!',"").replace("recipes",'')} </div>
-							
-							</div>
-							</Link>
-				})			
-				:
-				<div>Loading...</div>
-			}
+					</div>
 
-			</div>
-
+				</div>
+			</body>
 		</div>
-
-		</body>
 	);
 }
 

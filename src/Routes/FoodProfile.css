@@ -1,20 +1,55 @@
+
 .Loading-Container {
     display: flex;
     justify-content: left;
     align-items: center;
     vertical-align: center;
-    height: 100vh;
+    height: 100vh;  
   }
 
 .Loading {
-  width: 400px;
-  height: 400px;
+  width: 100px;
+  height: 100px;
   /* Center the component horizontally and vertically */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.App-header {
+  background-color: rgb(25, 36, 45);
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(6, 193, 104);
+} 
+
 .Profile {
-    align-items: center;
+  align-items: center;
+}
+
+.Picture {
+  align-items: center;
+}
+
+.DishName {
+  align-items: center;
+}
+
+.EndingTime {
+  align-items: center;
+}
+.Ingredients {
+  align-items: center;
+}
+
+.Steps {
+  align-items: center;
+}
+
+.Nutrition {
+  align-items: center;
 }

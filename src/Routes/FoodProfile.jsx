@@ -52,11 +52,14 @@ function FoodProfile() {
         </main>
         :
         <main class="Profile">
-            <div className='Dish Name'>  
+            <header className="App-header">
+					Recipe Roulette
+			</header>
+            <div className='DishName'>  
                 {itemName}
             </div>
         
-            <div className="Ending Time">
+            <div className="EndingTime">
                 {"Estimated time: " + (itemData['totalTime'] > 0 ? itemData['totalTime'] + " minute(s)" : "less than a minute")}
             </div>
         

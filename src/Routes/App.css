@@ -1,6 +1,9 @@
 .App {
   text-align: center;
+  background-color: rgb(29, 41, 50);
+  min-height: 100vh;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -27,11 +30,7 @@
 .App-link {
   color: #61dafb;
 }
-
-.App {
-  background-color: rgb(29, 41, 50);
-  min-height: 100vh;
-}
+  
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -59,7 +58,9 @@
   color: white;
   padding: 10px 20px;
   border: none;
+  margin: 100px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+
 }
