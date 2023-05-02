@@ -29,27 +29,48 @@
 
 .Profile {
   align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .Picture {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .DishName {
   align-items: center;
+  
 }
 
 .EndingTime {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
 .Ingredients {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .Steps {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .Nutrition {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }

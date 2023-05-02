@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import getData from '../GetData.js'
+import Loader from "react-spinners/PacmanLoader"
 import './Results.css'
 /*
 	Results page after clicking generate
@@ -39,6 +40,19 @@ function Results(props) {
 
 
 	return (
+		data == null ? 
+		<main className='Loading-Container'>
+            <div className="Loading">
+                <Loader
+                    color={"#06c168"}
+                    loading={data==null}
+                    size={325}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                />
+            </div>
+        </main>
+		:
 		<div>
 			<header className="App-header">
 					Recipe Roulette

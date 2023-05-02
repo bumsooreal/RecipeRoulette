@@ -16,7 +16,8 @@ function FoodProfile() {
     let [loading, setLoading] = useState(true);
     let [color, setColor] = useState("#ffffff");
 
-
+   
+    
     // Dish name
     // Ending time
     // Picture
@@ -51,38 +52,52 @@ function FoodProfile() {
             </div>
         </main>
         :
-        <main class="Profile">
-            <header className="App-header">
-					Recipe Roulette
-			</header>
-            <div className='DishName'>  
-                {itemName}
-            </div>
+
         
-            <div className="EndingTime">
-                {"Estimated time: " + (itemData['totalTime'] > 0 ? itemData['totalTime'] + " minute(s)" : "less than a minute")}
+        <main>
+            <header className="App-header">
+				Recipe Roulette
+		    </header>
+        <div class="Profile">
+            <div className='DishName'>  
+                <h1>{itemName}</h1>
             </div>
         
             <div className='Picture'>
                 <img className='Image' src={itemData['image']} alt= 'Recipe Image' />
             </div>
-        
+            
+            <div className="EndingTime">
+                {"Estimated time: " + (itemData['totalTime'] > 0 ? itemData['totalTime'] + " minute(s)" : "less than a minute")}
+            </div>
+
             <div className="Ingredients">
-                {openAIData["Ingredients"].map((ingredient) => {
-                    return <div className="Ingredient Line">{ingredient}</div>
+                <h2>Ingredients</h2>
+                {openAIData["Ingredients"].map((ingredient, i) => {
+                    return <div className="Ingredient Line" key={i}>{ingredient}</div>
                 })}
             </div>
-            
-            <div className="Steps">
+        
+            {/* <div className="Steps">
                 <div className="Recipe">{openAIData["Recipe"]}</div>
+            </div> */}
+
+            <div className='steps-container'>
+               {openAIData["Recipe"].replace(/[0-9]./g, '').split(". ").map((step) => {
+                return <div className='Steps'> {step} </div>
+               })}
             </div>
+
+            
+
+            
             
             <div className="Nutrition">
                 {openAIData["Nutrition"].map((nutrition) => {
                     return <div className="Nutrition Line">{nutrition}</div>
                 })}
             </div>					
-		
+        </div>
         </main>
     )
 }
