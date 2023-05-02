@@ -28,10 +28,16 @@ function FoodProfile() {
         // 
     useEffect(() => {
         const fetchAndSet = async () => {
-            const response = await openAI(itemName);
+            let response = await openAI(itemName);
+            let data = null;
             console.log(response);
             console.log("JSON:")
-            const data = JSON.parse(response)
+            try {
+                data = JSON.parse(response)
+            } catch (e) {
+                fetchAndSet();
+                return;
+            }
             console.log(data)
             setData(data[0]);
         }

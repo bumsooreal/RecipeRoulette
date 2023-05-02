@@ -11,19 +11,24 @@ import './Results.css'
 function Results(props) {
 	const location = useLocation();
 	const properties = location.state;
-	const[data, setData] = useState(null)
+	const [data, setData] = useState(null)
 	const [topHits, setTopHits] = useState(null); //tophits is an array of atmost 3 options to choose from 
 	
 
 	useEffect(() => {
 		const fetchAndSet = async () => {
 			const response = await getData(properties);
+			const hits = response['hits'];
+			if (hits == null) {
+				setData(false);
+				return;
+			}
 
 			let options = [];
 			let i = 0;
 			
-			while (i <= 2 && Boolean(response['hits'][i]) ) {
-				options[i] = response['hits'][i];
+			while (i <= 2 && Boolean(hits[i]) ) {
+				options[i] = hits[i];
 				i++;
 			}
 
@@ -52,6 +57,14 @@ function Results(props) {
                 />
             </div>
         </main>
+		:
+		data == false ?
+		<main className='Results'>
+			<h1>Oops the combination you were looking for DOES NOT EXIST!! D:</h1>
+			<Link to="/" state={properties}>
+				<button id="generate-btn"> Go Back </button>
+			</Link>
+		</main>
 		:
 		<div>
 			<Link to="/">

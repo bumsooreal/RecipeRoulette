@@ -19,6 +19,8 @@ async function call(foodName) {
 	});
 	//console.log(completion.data.choices[0]);
 	let str = completion.data.choices[0].text
+	str = str.replace(` 
+	`, "")
 	str = str.replace(`
 `, "")
 	str = str.replace(`\n`,"")
