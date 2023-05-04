@@ -19,7 +19,7 @@ function Results(props) {
 		const fetchAndSet = async () => {
 			const response = await getData(properties);
 			const hits = response['hits'];
-			if (hits == null) {
+			if (hits == null || hits.length < 1) {
 				setData(false);
 				return;
 			}
